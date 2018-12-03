@@ -8,12 +8,18 @@ export default class SearchBar extends Component {
             value:''
         }
     }
-    search(text){
-        console.log(text)
+    search(text='iraq'){
+        if(!text){
+            text='iraq'
+        }
         this.setState({
             value:text
         })
+        this.props.searchF(text)
+    
+        
     }
+
     render() {
         return (
             <View style={styles.searchStyle}>
